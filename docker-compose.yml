@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  books-control:
+    image: ${DOCKER_REGISTRY-}bookscontrol
+    build:
+      context: .
+      dockerfile: books-control/Dockerfile
+    ports:
+     - 8080:8080
+     - 8081:8081
