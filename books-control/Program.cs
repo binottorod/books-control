@@ -1,6 +1,12 @@
+using BooksControl.Models;
+using BooksControl.Services;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<BookStoreDatabaseSettings>(builder.Configuration.GetSection("BookStoreDatabase"));
+
+builder.Services.AddSingleton<BooksService>();
 
 // Add services to the container.
 
